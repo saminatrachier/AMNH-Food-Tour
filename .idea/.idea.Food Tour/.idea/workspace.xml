@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="385ad2c3-89e3-404d-9f57-009f2a3b84e8" name="Default Changelist" comment="" />
+    <list default="true" id="385ad2c3-89e3-404d-9f57-009f2a3b84e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,36 +17,69 @@
     <session id="1266604465">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="266" />
+          <entry key="cs" value="1390" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="266" />
+          <entry key="C#" value="1390" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cs" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="57" lean-forward="true" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+            <state relative-caret-position="560">
+              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
               <folding>
-                <marker date="1586637322648" expanded="false" signature="6:78" ph="..." />
-                <marker date="1586637322648" expanded="true" signature="214:613" ph="{...}" />
-                <marker date="1586637322648" expanded="true" signature="328:349" ph="{...}" />
-                <marker date="1586637322648" expanded="true" signature="407:611" ph="{...}" />
+                <marker date="1586640784603" expanded="true" signature="6:100" ph="..." />
+                <marker date="1586640784603" expanded="true" signature="236:2047" ph="{...}" />
+                <marker date="1586640784603" expanded="true" signature="576:668" ph="{...}" />
+                <marker date="1586640784603" expanded="true" signature="674:763" ph="/* Update is called once per frame ... */" />
+                <marker date="1586640784603" expanded="true" signature="781:1731" ph="{...}" />
+                <marker date="1586640784603" expanded="true" signature="796:1112" ph="/* mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0); ... */" />
+                <marker date="1586640784603" expanded="true" signature="1334:1582" ph="/* lerps(makes the fill smooth for the progressBar)(if it needs to be faster multiply Time.deltaTime by multiplie ... */" />
+                <marker date="1586640784603" expanded="true" signature="1619:1723" ph="{...}" />
+                <marker date="1586640784603" expanded="true" signature="1807:2045" ph="{...}" />
+                <marker date="1586640784603" expanded="true" signature="1853:2039" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Collisions.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+              <folding>
+                <marker date="1586639624109" expanded="false" signature="6:78" ph="..." />
+                <marker date="1586639624109" expanded="true" signature="119:500" ph="{...}" />
+                <marker date="1586639624109" expanded="true" signature="159:328" ph="{...}" />
+                <marker date="1586639624109" expanded="true" signature="398:419" ph="{...}" />
+                <marker date="1586639624109" expanded="true" signature="477:498" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -53,12 +91,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Collisions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMouse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Collisions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
@@ -70,7 +110,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="46" />
+    <option name="x" value="45" />
     <option name="y" value="65" />
     <option name="width" value="825" />
     <option name="height" value="855" />
@@ -83,10 +123,10 @@
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -133,12 +173,13 @@
       <option name="presentableId" value="Default" />
       <updated>1586636729412</updated>
       <workItem from="1586636735835" duration="424000" />
-      <workItem from="1586637179887" duration="144000" />
+      <workItem from="1586637179887" duration="951000" />
+      <workItem from="1586638358977" duration="2424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="568000" />
+    <option name="totallyTimeSpent" value="3799000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -153,7 +194,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.102013424" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.103355706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -199,15 +240,35 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMouse.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Collisions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <folding>
+            <marker date="1586639624109" expanded="false" signature="6:78" ph="..." />
+            <marker date="1586639624109" expanded="true" signature="119:500" ph="{...}" />
+            <marker date="1586639624109" expanded="true" signature="159:328" ph="{...}" />
+            <marker date="1586639624109" expanded="true" signature="398:419" ph="{...}" />
+            <marker date="1586639624109" expanded="true" signature="477:498" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="57" lean-forward="true" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state relative-caret-position="560">
+          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
           <folding>
-            <marker date="1586637322648" expanded="false" signature="6:78" ph="..." />
-            <marker date="1586637322648" expanded="true" signature="214:613" ph="{...}" />
-            <marker date="1586637322648" expanded="true" signature="328:349" ph="{...}" />
-            <marker date="1586637322648" expanded="true" signature="407:611" ph="{...}" />
+            <marker date="1586640784603" expanded="true" signature="6:100" ph="..." />
+            <marker date="1586640784603" expanded="true" signature="236:2047" ph="{...}" />
+            <marker date="1586640784603" expanded="true" signature="576:668" ph="{...}" />
+            <marker date="1586640784603" expanded="true" signature="674:763" ph="/* Update is called once per frame ... */" />
+            <marker date="1586640784603" expanded="true" signature="781:1731" ph="{...}" />
+            <marker date="1586640784603" expanded="true" signature="796:1112" ph="/* mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0); ... */" />
+            <marker date="1586640784603" expanded="true" signature="1334:1582" ph="/* lerps(makes the fill smooth for the progressBar)(if it needs to be faster multiply Time.deltaTime by multiplie ... */" />
+            <marker date="1586640784603" expanded="true" signature="1619:1723" ph="{...}" />
+            <marker date="1586640784603" expanded="true" signature="1807:2045" ph="{...}" />
+            <marker date="1586640784603" expanded="true" signature="1853:2039" ph="{...}" />
           </folding>
         </state>
       </provider>
