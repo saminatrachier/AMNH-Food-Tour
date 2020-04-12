@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="385ad2c3-89e3-404d-9f57-009f2a3b84e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Tour/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
@@ -17,21 +16,22 @@
     <session id="1266604465">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="1390" />
+          <entry key="cs" value="1534" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="1390" />
+          <entry key="C#" value="1534" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,19 +51,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="380">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="48" selection-end-column="9" />
               <folding>
-                <marker date="1586640784603" expanded="true" signature="6:100" ph="..." />
-                <marker date="1586640784603" expanded="true" signature="236:2047" ph="{...}" />
-                <marker date="1586640784603" expanded="true" signature="576:668" ph="{...}" />
-                <marker date="1586640784603" expanded="true" signature="674:763" ph="/* Update is called once per frame ... */" />
-                <marker date="1586640784603" expanded="true" signature="781:1731" ph="{...}" />
-                <marker date="1586640784603" expanded="true" signature="796:1112" ph="/* mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0); ... */" />
-                <marker date="1586640784603" expanded="true" signature="1334:1582" ph="/* lerps(makes the fill smooth for the progressBar)(if it needs to be faster multiply Time.deltaTime by multiplie ... */" />
-                <marker date="1586640784603" expanded="true" signature="1619:1723" ph="{...}" />
-                <marker date="1586640784603" expanded="true" signature="1807:2045" ph="{...}" />
-                <marker date="1586640784603" expanded="true" signature="1853:2039" ph="{...}" />
+                <marker date="1586641070573" expanded="false" signature="6:100" ph="..." />
+                <marker date="1586641070573" expanded="true" signature="236:2223" ph="{...}" />
+                <marker date="1586641070573" expanded="true" signature="576:668" ph="{...}" />
+                <marker date="1586641070573" expanded="true" signature="674:763" ph="/* Update is called once per frame ... */" />
+                <marker date="1586641070573" expanded="true" signature="781:1729" ph="{...}" />
+                <marker date="1586641070573" expanded="true" signature="796:1112" ph="/* mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0); ... */" />
+                <marker date="1586641070573" expanded="true" signature="1617:1721" ph="{...}" />
+                <marker date="1586641070573" expanded="true" signature="1805:2221" ph="{...}" />
+                <marker date="1586641070573" expanded="true" signature="1851:2215" ph="{...}" />
+                <marker date="1586641070573" expanded="true" signature="1971:2165" ph="/* for testing purposes ... */" />
               </folding>
             </state>
           </provider>
@@ -123,10 +123,10 @@
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,12 +174,13 @@
       <updated>1586636729412</updated>
       <workItem from="1586636735835" duration="424000" />
       <workItem from="1586637179887" duration="951000" />
-      <workItem from="1586638358977" duration="2424000" />
+      <workItem from="1586638358977" duration="3307000" />
+      <workItem from="1586719803919" duration="271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3799000" />
+    <option name="totallyTimeSpent" value="4953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -192,9 +193,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.103355706" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.04295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -240,6 +240,25 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMouse.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <marker date="1586641070573" expanded="false" signature="6:100" ph="..." />
+            <marker date="1586641070573" expanded="true" signature="236:2223" ph="{...}" />
+            <marker date="1586641070573" expanded="true" signature="576:668" ph="{...}" />
+            <marker date="1586641070573" expanded="true" signature="674:763" ph="/* Update is called once per frame ... */" />
+            <marker date="1586641070573" expanded="true" signature="781:1729" ph="{...}" />
+            <marker date="1586641070573" expanded="true" signature="796:1112" ph="/* mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0); ... */" />
+            <marker date="1586641070573" expanded="true" signature="1617:1721" ph="{...}" />
+            <marker date="1586641070573" expanded="true" signature="1805:2221" ph="{...}" />
+            <marker date="1586641070573" expanded="true" signature="1851:2215" ph="{...}" />
+            <marker date="1586641070573" expanded="true" signature="1971:2165" ph="/* for testing purposes ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Collisions.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -250,25 +269,6 @@
             <marker date="1586639624109" expanded="true" signature="159:328" ph="{...}" />
             <marker date="1586639624109" expanded="true" signature="398:419" ph="{...}" />
             <marker date="1586639624109" expanded="true" signature="477:498" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-          <folding>
-            <marker date="1586640784603" expanded="true" signature="6:100" ph="..." />
-            <marker date="1586640784603" expanded="true" signature="236:2047" ph="{...}" />
-            <marker date="1586640784603" expanded="true" signature="576:668" ph="{...}" />
-            <marker date="1586640784603" expanded="true" signature="674:763" ph="/* Update is called once per frame ... */" />
-            <marker date="1586640784603" expanded="true" signature="781:1731" ph="{...}" />
-            <marker date="1586640784603" expanded="true" signature="796:1112" ph="/* mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0); ... */" />
-            <marker date="1586640784603" expanded="true" signature="1334:1582" ph="/* lerps(makes the fill smooth for the progressBar)(if it needs to be faster multiply Time.deltaTime by multiplie ... */" />
-            <marker date="1586640784603" expanded="true" signature="1619:1723" ph="{...}" />
-            <marker date="1586640784603" expanded="true" signature="1807:2045" ph="{...}" />
-            <marker date="1586640784603" expanded="true" signature="1853:2039" ph="{...}" />
           </folding>
         </state>
       </provider>

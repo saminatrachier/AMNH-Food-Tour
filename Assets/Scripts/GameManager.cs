@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         mousePosition.transform.position = worldPosition;
         
         //lerps(makes the fill smooth for the progressBar)(if it needs to be faster multiply Time.deltaTime by multiplier of choice)
-        //progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount,progress,Time.deltaTime);
+        progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount,progress,Time.deltaTime);
         
         //winstate:
         if (progress >= maxProgress)
@@ -61,9 +61,9 @@ public class GameManager : MonoBehaviour
             
             
             //for testing purposes
-            progressBar.fillAmount = progress;
+            //progressBar.fillAmount = progress;
             
-            //last hit Object
+            //last hit Object, so the score does not continue to increase without touching the other collider
             lastHitObject = hitObject;
 
         }
