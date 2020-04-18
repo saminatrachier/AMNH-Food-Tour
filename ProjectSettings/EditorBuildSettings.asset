@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CornWash.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/StartFire.unity
+    guid: 3d60f99ccd28f6b42b45f4640443c6d5
+  - enabled: 1
+    path: Assets/Scenes/CookCorn.unity
+    guid: 4b490e0568e9adf4b9e539a0d4352d5f
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: a2d08a43e45cc7c4fab49a411f9a4a11
   m_configObjects: {}
