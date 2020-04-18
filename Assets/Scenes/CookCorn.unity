@@ -1121,6 +1121,7 @@ MonoBehaviour:
   progress: 0
   scaling: 0
   bobbing: 0
+  forming: 0
   animCurve:
     serializedVersion: 2
     m_Curve:
@@ -1178,9 +1179,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  water: {fileID: 0}
+  handL: {fileID: 0}
+  handR: {fileID: 0}
   fire1: {fileID: 0}
   fire2: {fileID: 0}
   cornCake: {fileID: 55875816}
+  fire: {fileID: 1985372701}
+  clickIcon1: {fileID: 0}
+  clickIcon2: {fileID: 0}
   cooking: 0
 --- !u!4 &1130916185
 Transform:

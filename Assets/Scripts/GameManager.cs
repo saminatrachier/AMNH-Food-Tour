@@ -9,6 +9,7 @@ using Vector3 = UnityEngine.Vector3;
 //USAGE: GAME MANAGER- tracks player's mouse movements for Swipe and Tap Actions for minigames
 public class GameManager : MonoBehaviour
 {
+    //tracks mouse position
     public GameObject mousePosition;
 
     public static GameManager instance;
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
     //progress bar Image
     public Image progressBar;
 
-    //corn Ball Image
+    //corn Ball Images
     public GameObject cornBall1;
     public GameObject cornBall2;
     public GameObject cornBall3;
@@ -30,8 +31,10 @@ public class GameManager : MonoBehaviour
     public float progress;
     private float maxProgress = 1;
 
+    //stores last hit object to avoid double hits
     private GameObject lastHitObject;
 
+    //tracks the current open scene to progress to next level
     private Scene currentScene;
 
     //fire starter string scale START FIRE
@@ -40,15 +43,27 @@ public class GameManager : MonoBehaviour
     //corn cake bob COOK CORN
     public bool bobbing;
 
+    //corn cake formation
+    public bool forming;
+    
+    //animation curves for lerping animations (corn rise, fire starter oscillation)
     public AnimationCurve animCurve;
     public AnimationCurve recursiveCurve;
 
+    //water sprite for WASHING CORN step
+    public GameObject water;
+    //hand sprites for WASHING CORN step
+    public GameObject handL;
+    public GameObject handR;
+    
     
     //fire sprites for START FIRE MINIGAME:
     public GameObject fire1, fire2;
     
+    
     //finished corn cake COOKING
-    public GameObject cornCake;
+    public GameObject cornCake, fire;
+    public GameObject clickIcon1,clickIcon2;
     
     //boolean for finishing corn Cake Cooking
     public bool cooking = false;
@@ -71,8 +86,7 @@ public class GameManager : MonoBehaviour
     {
         //mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0);
         //establish world position of the mouse
-       // Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       // mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0);
+       
         if (currentScene.name == "CornWash" || currentScene.name == "StartFire")
         {
             Vector3 mousePos = Input.mousePosition;
@@ -94,6 +108,7 @@ public class GameManager : MonoBehaviour
         }
         
 
+        //if the Cook Corn scene is open, run the corn tap coroutine
         if (Input.GetMouseButtonDown(0)&& currentScene.name == "CookCorn")
         {
             CookCornTap();
@@ -109,7 +124,7 @@ public class GameManager : MonoBehaviour
                 cornBall2.SetActive(true);
             }
 
-            if (progress >= .6f)
+            if (progress >= .7f)
             {
                 cornBall2.SetActive(false);
                 cornBall3.SetActive(true);
@@ -135,6 +150,15 @@ public class GameManager : MonoBehaviour
                 if (!scaling)
                 {
                     StartCoroutine(ScaleStrings());
+                }
+            }
+            //for Cornwash Scene:
+            if (currentScene.name == "CornWash")
+            {
+                //changing PNGs size based on completeness
+                if (!forming)
+                {
+                    StartCoroutine(CornWashing());
                 }
             }
 
@@ -218,20 +242,62 @@ public class GameManager : MonoBehaviour
         
     }
     
+    //enumerator for creating running water and hand movement
+    IEnumerator CornWashing()
+    {
+       
+       
+            forming = true;
+            float t = 0;
+        //water moving up and down
+            Vector3 StartPosition = water.transform.localPosition;
+            Vector3 EndPosition = water.transform.localPosition +new Vector3(0,.15f,0);
+            
+        //left hand moving to the right
+        Vector3 StartPositionL = handL.transform.localPosition;
+        Vector3 EndPositionL = handL.transform.localPosition +new Vector3(-.15f,0,0);
+        
+        //right hand moving to the left
+        Vector3 StartPositionR = handR.transform.localPosition;
+        Vector3 EndPositionR = handR.transform.localPosition +new Vector3(.15f,0,0);
+        
+            while (t < 1)
+            {
+                water.transform.localPosition = Vector3.LerpUnclamped(StartPosition, EndPosition, recursiveCurve.Evaluate(t));
+                handL.transform.localPosition = Vector3.LerpUnclamped(StartPositionL, EndPositionL, recursiveCurve.Evaluate(t));
+                handR.transform.localPosition = Vector3.LerpUnclamped(StartPositionR, EndPositionR, recursiveCurve.Evaluate(t));
+                t += Time.deltaTime * 6;
+                yield return 0;
+            }
+            water.transform.localPosition = StartPosition;
+        handL.transform.localPosition = StartPositionL;
+        handR.transform.localPosition = StartPositionR;
+            forming = false;
+       
+    }
+    
+    //enumerator for creating oscillating corncake bob
     IEnumerator CornBob()
     {
        
         bobbing = true;
         float t = 0;
+        //corn cake bobs up and down
         Vector3 StartScale = cornCake.transform.localPosition;
         Vector3 EndScale = cornCake.transform.localPosition +new Vector3(0,.15f,0);
+        
+        //fire size oscillates
+        Vector3 StartFireScale = fire.transform.localPosition;
+        Vector3 EndFireScale = fire.transform.localPosition +new Vector3(0,-.2f,0);
         while (t < 1)
         {
             cornCake.transform.localPosition = Vector3.LerpUnclamped(StartScale, EndScale, recursiveCurve.Evaluate(t));
+            fire.transform.localPosition = Vector3.LerpUnclamped(StartFireScale, EndFireScale, recursiveCurve.Evaluate(t));
             t += Time.deltaTime * 6;
             yield return 0;
         }
         cornCake.transform.localPosition = StartScale;
+        fire.transform.localPosition = StartFireScale;
         bobbing = false;
         
         
@@ -248,7 +314,7 @@ public class GameManager : MonoBehaviour
         Vector3 StartPosition = cornCake.transform.localPosition;
         Vector3 EndPosition = cornCake.transform.localPosition +new Vector3(0,1,0);
         
-        //
+        //rotation of the corn cake to indicate it finished cooking
         Vector3 StartRotation = cornCake.transform.localEulerAngles;
         Vector3 EndRotation = cornCake.transform.localEulerAngles + new Vector3(0, 0, 90);
         while (t < 1)
