@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         
         
         //lerps(makes the fill smooth for the progressBar)(if it needs to be faster multiply Time.deltaTime by multiplier of choice)
-        progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount,progress,Time.deltaTime);
+        progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount,progress,Time.deltaTime*2);
         
         //winstate:
         if (progress >= maxProgress && currentScene.name != "CookCorn")
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
         if (lastHitObject != hitObject)
         {
             //increases the progress bar
-            progress += .01f;
+            progress += .02f;
             
             //for the Start Fire Scene:
             if (currentScene.name == "StartFire")
