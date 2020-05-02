@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     //progress bar Image
     public Image progressBar;
 
+    
+    
     //corn Ball Images
     public GameObject cornBall1;
     public GameObject cornBall2;
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     //tracks the current open scene to progress to next level
     private Scene currentScene;
+    
+    
 
     //fire starter string scale START FIRE
     public bool scaling;
@@ -50,6 +54,9 @@ public class GameManager : MonoBehaviour
     public AnimationCurve animCurve;
     public AnimationCurve recursiveCurve;
 
+    //grinding corn flour pestle sprite 
+    public GameObject pestle;
+    
     //water sprite for WASHING CORN step
     public GameObject water;
     //hand sprites for WASHING CORN step
@@ -68,6 +75,10 @@ public class GameManager : MonoBehaviour
     //boolean for finishing corn Cake Cooking
     public bool cooking = false;
     
+    //ref to Recipe Card Parent
+    public GameObject cardParent;
+    //button for Recipe card
+    public GameObject flipButton;
     
     // Start is called before the first frame update
     void Start()
@@ -87,7 +98,7 @@ public class GameManager : MonoBehaviour
         //mousePosition.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0);
         //establish world position of the mouse
        
-        if (currentScene.name == "CornWash" || currentScene.name == "StartFire")
+        if (currentScene.name == "CornWash" || currentScene.name == "StartFire" || currentScene.name == "Grind Corn")
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 10;
@@ -141,7 +152,7 @@ public class GameManager : MonoBehaviour
         if (lastHitObject != hitObject)
         {
             //increases the progress bar
-            progress += .02f;
+            progress += .025f;
             
             //for the Start Fire Scene:
             if (currentScene.name == "StartFire")
@@ -153,12 +164,13 @@ public class GameManager : MonoBehaviour
                 }
             }
             //for Cornwash Scene:
-            if (currentScene.name == "CornWash")
-            {
+            if (currentScene.name == "CornWash" || currentScene.name == "Grind Corn")
+            {  Debug.Log("movement check 2");
                 //changing PNGs size based on completeness
                 if (!forming)
                 {
                     StartCoroutine(CornWashing());
+                   
                 }
             }
 
@@ -173,6 +185,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //sceen transitions
+    public void NextScene()
+    {
+        //for ONLY  the menu screen
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+
+  
+    //flip recipe card (last scene)
+    public void StartCardFlip()
+    {
+        StartCoroutine((CardFlip()));
+    }
+     IEnumerator CardFlip()
+    {
+        
+        flipButton.SetActive(false);
+        float t = 0;
+        Vector3 StartRot = cardParent.transform.localEulerAngles;
+        while (t < 1)
+        {
+            cardParent.transform.localEulerAngles = Vector3.LerpUnclamped(StartRot, StartRot+ new Vector3(0,0,180), animCurve.Evaluate(t));
+            t += Time.deltaTime * 6;
+            yield return 0;
+        }
+
+        cardParent.transform.localEulerAngles = StartRot + new Vector3(0, 0, 180);
+        flipButton.SetActive(true);
+    }
+    
     //Tapping Action for 3rd Scene (cook corn)
     public void CookCornTap()
     {
@@ -245,34 +288,55 @@ public class GameManager : MonoBehaviour
     //enumerator for creating running water and hand movement
     IEnumerator CornWashing()
     {
-       
+       Debug.Log("movement check 1");
        
             forming = true;
             float t = 0;
         //water moving up and down
             Vector3 StartPosition = water.transform.localPosition;
-            Vector3 EndPosition = water.transform.localPosition +new Vector3(0,.15f,0);
-            
-        //left hand moving to the right
-        Vector3 StartPositionL = handL.transform.localPosition;
-        Vector3 EndPositionL = handL.transform.localPosition +new Vector3(-.15f,0,0);
+            Vector3 EndPosition = water.transform.localPosition +new Vector3(0,.25f,0);
+
+        Vector3 StartPositionL = Vector3.zero;
+        Vector3 EndPositionL = Vector3.zero;
+
+        Vector3 StartPositionR = Vector3.zero;
+        Vector3 EndPositionR = Vector3.zero;
         
-        //right hand moving to the left
-        Vector3 StartPositionR = handR.transform.localPosition;
-        Vector3 EndPositionR = handR.transform.localPosition +new Vector3(.15f,0,0);
+        if (currentScene.name == "CornWash")
+        {
+            //left hand moving to the right
+             StartPositionL = handL.transform.localPosition;
+             EndPositionL = handL.transform.localPosition +new Vector3(-.15f,0,0);
+        
+            //right hand moving to the left
+            StartPositionR = handR.transform.localPosition;
+            EndPositionR = handR.transform.localPosition +new Vector3(.15f,0,0);
+        }
+            
+        
         
             while (t < 1)
             {
                 water.transform.localPosition = Vector3.LerpUnclamped(StartPosition, EndPosition, recursiveCurve.Evaluate(t));
-                handL.transform.localPosition = Vector3.LerpUnclamped(StartPositionL, EndPositionL, recursiveCurve.Evaluate(t));
-                handR.transform.localPosition = Vector3.LerpUnclamped(StartPositionR, EndPositionR, recursiveCurve.Evaluate(t));
+                if (currentScene.name == "CornWash")
+                {
+                    handL.transform.localPosition = Vector3.LerpUnclamped(StartPositionL, EndPositionL, recursiveCurve.Evaluate(t));
+                    handR.transform.localPosition = Vector3.LerpUnclamped(StartPositionR, EndPositionR, recursiveCurve.Evaluate(t));
+                }
+               
                 t += Time.deltaTime * 6;
                 yield return 0;
             }
             water.transform.localPosition = StartPosition;
-        handL.transform.localPosition = StartPositionL;
-        handR.transform.localPosition = StartPositionR;
+        
+        if (currentScene.name == "CornWash")
+        {
+            handL.transform.localPosition = StartPositionL;
+            handR.transform.localPosition = StartPositionR;
+        }
+       
             forming = false;
+        Debug.Log (forming);
        
     }
     
@@ -317,6 +381,8 @@ public class GameManager : MonoBehaviour
         //rotation of the corn cake to indicate it finished cooking
         Vector3 StartRotation = cornCake.transform.localEulerAngles;
         Vector3 EndRotation = cornCake.transform.localEulerAngles + new Vector3(0, 0, 90);
+        
+        clickIcon1.SetActive(false);
         while (t < 1)
         {
             cornCake.transform.localPosition = Vector3.LerpUnclamped(StartPosition, EndPosition, animCurve.Evaluate(t));
@@ -324,6 +390,8 @@ public class GameManager : MonoBehaviour
             t += Time.deltaTime * 2;
             yield return 0;
         }
+        
+        clickIcon2.SetActive(true);
         cornCake.transform.localPosition = EndPosition;
         cornCake.transform.localEulerAngles = EndRotation;
         cornCake.GetComponent <BoxCollider>().enabled = true;

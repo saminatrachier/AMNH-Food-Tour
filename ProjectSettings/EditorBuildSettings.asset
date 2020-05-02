@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 8744d20fa620d9440bd985c6f1457989
+  - enabled: 1
+    path: Assets/Scenes/Grind Corn.unity
+    guid: bc4aea9e5580fe542a96cfbcdc282f64
+  - enabled: 1
     path: Assets/Scenes/CornWash.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -15,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CookCorn.unity
     guid: 4b490e0568e9adf4b9e539a0d4352d5f
   - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: a2d08a43e45cc7c4fab49a411f9a4a11
+    path: Assets/Scenes/EndSceneFORREAL 1.unity
+    guid: 1f28c5b4f29216e4b908f441013f590a
   m_configObjects: {}
